@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onepage</title>
+</head>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+<body>
+    <center>
+    <h2 style="background-color:rgb(18, 119, 5); color:#fff"> Aluguel por temporada!<br>Quanto cobrar?</h2>
+    <div class="p-3 mb-2 bg-light text-dark">
+    <div class="col-md-4 col-md-offset-4">
+        <p style="color:rgb(46, 48, 47)" > Não estipule valores ao acaso!
+            Nosso sistema retorna a você o melhor preço por noite.</p>
+    <form action="" method="POST">
+        {{form.csrf_token}}
+        <div class="form-group">
+            <label>Localização</label>
+            {{form.localizacao(class="form-control", placeholder="Cidade")}}
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Data de Check-In</label>
+            {{form.check_in(class="form-control", placeholder="yyyy-mm-dd")}}
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Número de Banheiros</label>
+            {{form.n_banheiros(class="form-control", placeholder="Quantos banheiros")}}
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Número de Camas</label>
+            {{form.n_camas(class="form-control", placeholder="Quantas camas")}}
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Número de Hóspedes</label>
+            {{form.n_hospedes(class="form-control", placeholder="Total de hospedes")}}
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Número de Comentários</label>
+            {{form.n_comentarios(class="form-control", placeholder="Quantos comentarios")}}
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Taxa</label>
+            {{form.taxas(class="form-control", placeholder="R$")}}
+        </div>
+        <br>
+        <h5 align='left'>Comodidades:</h5>
+        <div class="checkbox" align='left'>
+            <label>
+                {{form.academia}} Academia
+            </label>
+        <div class="checkbox">
+            <label>
+                {{form.jacuzzi}} Jacuzzi
+            </label>
+        <div class="checkbox">
+            <label>
+                {{form.secadora}} Secadora
+            </label>
+        <div class="checkbox">
+            <label>
+                {{form.piscina}} Piscina
+            </label>
+        <div class="checkbox">
+            <label>
+                {{form.permitido_animais}} Permitido Animais
+            </label>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success">Enviar</button>
+    </form>
+    <p>
+    <div align='center'>
+        {% for n in resultado %}
+            {% for key, value in resultado.items() %}
+                {% for item in value %}
+                <h2 style="background-color:rgb(71, 3, 37); color: #fff;" >Melhor preço:<br>R$ {{item}}</h2>
+                {% endfor %}
+            {% endfor %}
+        {% endfor %}
+    </div>
+    </p>
+    <h10>* Preço por noite de acordo com as caracteristicas apresentadas</h10>
+    </div>
+    </div>
+    </center>
+</body>
+</html>
