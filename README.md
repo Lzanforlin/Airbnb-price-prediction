@@ -1,5 +1,5 @@
 # Airbnb project
 
-Project about rent otimization using webscraping, data sciente and machine learning
-
-“Developing software with a web framework or application that uses a database, includes web script (Javascript), cloud, accessibility, version control, continuous integration and testing. Include one of the following requirements: API usage and delivery, data analytics'.
+Final Project: Machine Learning Model for Forecasting Rental Apartment Prices for Property Owners
+Project Summary:
+This project develops a machine learning model to forecast rental prices, tailored for property owners. It involves comprehensive web scraping of rental listings, extensive data cleaning, preparation, wrangling and engineering. Key factors include property profile, location and various other attributes. A linear regression model is employed to deliver accurate price predictions, covering all stages from model evaluation to deployment.
